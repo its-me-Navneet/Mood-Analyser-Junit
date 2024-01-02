@@ -27,7 +27,12 @@ public void happyMood(){
     assertFalse(Mymood.happyMood(mood));
 }
 
+    @Test
+    public void EmptyMood(){
 
+        String mood =null ;
+        assertTrue(Mymood.happyMood(mood));
+    }
 
 
 }
