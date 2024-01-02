@@ -1,5 +1,5 @@
 import org.example.MoodAnalyser;
-import org.junit.Assert;
+import org.example.MoodAnalysisException;
 import org.junit.Before;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -31,7 +31,15 @@ public void happyMood(){
     public void EmptyMood(){
 
         String mood =null ;
-        assertTrue(Mymood.happyMood(mood));
+         try{
+             Mymood.handleEmptyMood(mood) ;
+             fail("Expecting Exception");
+         }
+         catch (MoodAnalysisException e) {
+
+           assertEquals("Empty mood" ,e.getMessage());
+         }
+
     }
 
 

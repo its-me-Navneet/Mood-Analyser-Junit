@@ -23,4 +23,11 @@ public class MoodAnalyser {
         return true ;
 
     }
+
+    public boolean handleEmptyMood(String mood) throws MoodAnalysisException {
+
+         if(mood == null) throw  new MoodAnalysisException("Empty mood") ;
+
+         return happyMood(mood) ;
+    }
 }
